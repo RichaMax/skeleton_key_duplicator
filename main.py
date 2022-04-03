@@ -28,7 +28,7 @@ if __name__ == '__main__':
         
         wait_for_end_loading_screen()
 
-        # open_mail()
+        open_mail()
         
         exit_to_main_menu()
         

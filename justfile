@@ -2,7 +2,7 @@ root := justfile_directory()
 
 install:
     #!/bin/bash
-    python3 -m venv {{root}}/.pyenv
+    python -m venv {{root}}/.pyenv
     source {{root}}/.pyenv/bin/activate
     python -m pip install -r {{root}}/requirements.txt
 
