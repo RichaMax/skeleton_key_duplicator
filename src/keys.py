@@ -2,6 +2,7 @@ from pynput.keyboard import Key, Controller, Listener
 from typing import Union
 from time import sleep
 
+# Wait times
 ESCAPE_MENU_NAVIGATION = 0.1
 SOCIAL_MENU_NAVIGATION = 0.2
 EXIT_POPUP_NAVIGATION = 0.2

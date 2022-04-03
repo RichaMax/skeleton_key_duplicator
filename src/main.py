@@ -1,4 +1,5 @@
 import logging
+from enum import Enum
 from time import sleep
 from pynput import keyboard
 
@@ -7,13 +8,20 @@ from screen import wait_for_end_loading_screen
 from utils import ticker
 
 ACTIVE = False
+
+class BotStoppedError(Exception):
+    pass
         
 def switch_active(key: keyboard.Key):
     global ACTIVE
     if isinstance(key, keyboard._win32.KeyCode):
         if key.char.lower() == 'm':
-            ACTIVE = not ACTIVE
-            print('Bot ' + ('de' if  not ACTIVE else '') + 'activated')
+            if not ACTIVE:
+                ACTIVE = True
+                print('Bot started')
+            else:
+                print('Bot stopped')
+                raise BotStoppedError
 
 if __name__ == '__main__':
     listener = keyboard.Listener(
