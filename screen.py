@@ -1,5 +1,5 @@
 from mss import mss
-from PIL import Image
+from PIL import Image, ImageGrab
 from time import sleep
 import numpy as np
 
@@ -11,12 +11,7 @@ def ticker(interval: float):
 
 
 def read_screen() -> Image:
-    with mss() as sct:
-        sct.shot(output='output/screenshot.png')
-        print('Screenshot taken.')
-    
-    return Image.open('output/screenshot.png')
-
+    return ImageGrab.grab()
 
 def wait_for_end_loading_screen():
     sleep(0.2)
