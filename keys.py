@@ -15,22 +15,22 @@ def continue_game():
 def exit_to_main_menu():
     press_key(Key.esc)
     for _ in range(4):
-        sleep(0.5)
+        sleep(0.2)
         press_key(Key.down)
     press_key(Key.enter)
     for _ in range(2):
-        sleep(0.5)
+        sleep(0.2)
         press_key(Key.left)
     press_key(Key.enter)
     
 def open_mail():
     press_key(Key.esc)
-    sleep(0.5)
+    sleep(0.2)
     press_key(Key.down)
-    sleep(0.5)
+    sleep(0.2)
     press_key(Key.enter)
     for _ in range(3):
-        sleep(0.5)
+        sleep(0.2)
         press_key('c')
     sleep(0.5)
     press_key(Key.enter)
