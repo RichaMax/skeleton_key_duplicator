@@ -1,3 +1,4 @@
 pynput
 mss
 Pillow
+numpy
