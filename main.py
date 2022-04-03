@@ -8,7 +8,7 @@ from utils import ticker
 
 ACTIVE = False
         
-def on_release(key: keyboard.Key):
+def switch_active(key: keyboard.Key):
     global ACTIVE
     if isinstance(key, keyboard._win32.KeyCode):
         if key.char.lower() == 'm':
@@ -17,7 +17,7 @@ def on_release(key: keyboard.Key):
 
 if __name__ == '__main__':
     listener = keyboard.Listener(
-        on_release=on_release,
+        on_release=switch_active,
     )
     
     listener.start()
