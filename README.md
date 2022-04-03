@@ -8,7 +8,7 @@ You need to have entered at least on shift code to obtain a skeleton key **(DO N
 
 # Usage
 
-Then press m and go on with you life, take a shower, a coffee, go to work...
+Then press keyboard key `m` and go on with you life, take a shower, a coffee, go to work...
 
 the estimated time to perform a full loop is: XX secondes * your computer slow ass
 
