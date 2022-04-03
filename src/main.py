@@ -16,12 +16,7 @@ def switch_active(key: keyboard.Key):
     global ACTIVE
     if isinstance(key, keyboard._win32.KeyCode):
         if key.char.lower() == 'm':
-            if not ACTIVE:
-                ACTIVE = True
-                print('Bot started')
-            else:
-                print('Bot stopped')
-                raise BotStoppedError
+            ACTIVE = not ACTIVE
 
 if __name__ == '__main__':
     listener = keyboard.Listener(
@@ -34,21 +29,25 @@ if __name__ == '__main__':
     
     duplications = 0
 
-    try:
-        for _ in ticker(0.1):
-            if not ACTIVE:
-                continue
-                
-            continue_game()
-            
-            wait_for_end_loading_screen()
+    while not ACTIVE:
+        sleep(0.1)
 
-            open_mail()
-            
-            exit_to_main_menu()
-            
-            wait_for_end_loading_screen()
+    print('Bot started')
 
-            duplications += 1
-    except KeyboardInterrupt:
-        print(f'{duplications} duplications')
+    while ACTIVE:
+            
+        continue_game()
+        
+        wait_for_end_loading_screen()
+
+        open_mail()
+        
+        exit_to_main_menu()
+        
+        wait_for_end_loading_screen()
+
+        duplications += 1
+
+    print('Bot finished')
+
+    print(f'{duplications} duplications')
