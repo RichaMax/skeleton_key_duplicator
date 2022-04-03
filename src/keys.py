@@ -24,15 +24,15 @@ def continue_game():
     
 def exit_to_main_menu():
     press_key(Key.esc, pause=ESCAPE_MENU_OPEN)
-    press_key(Key.down, times=4, wait=ESCAPE_MENU_NAVIGATION)
-    press_key(Key.enter, wait=EXIT_POPUP_OPEN)
-    press_key(Key.left, times=2, wait=EXIT_POPUP_NAVIGATION)
+    press_key(Key.down, times=4, pause=ESCAPE_MENU_NAVIGATION)
+    press_key(Key.enter, pause=EXIT_POPUP_OPEN)
+    press_key(Key.left, times=2, pause=EXIT_POPUP_NAVIGATION)
     press_key(Key.enter)
     
 def open_mail():
-    press_key(Key.esc, wait=ESCAPE_MENU_OPEN)
-    press_key(Key.down, wait=ESCAPE_MENU_NAVIGATION)
-    press_key(Key.enter, wait=SOCIAL_MENU_OPEN)
-    press_key('c', times=3, wait=SOCIAL_MENU_NAVIGATION)
+    press_key(Key.esc, pause=ESCAPE_MENU_OPEN)
+    press_key(Key.down, pause=ESCAPE_MENU_NAVIGATION)
+    press_key(Key.enter, pause=SOCIAL_MENU_OPEN)
+    press_key('c', times=3, pause=SOCIAL_MENU_NAVIGATION)
     press_key(Key.enter)
     sleep(0.2)
