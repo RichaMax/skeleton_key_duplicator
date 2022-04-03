@@ -1,4 +1,3 @@
-from mss import mss
 from PIL import Image, ImageGrab
 from time import sleep
 import numpy as np
