@@ -34,3 +34,4 @@ def open_mail():
         press_key('c')
     sleep(0.5)
     press_key(Key.enter)
+    sleep(0.2)

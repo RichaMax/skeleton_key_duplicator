@@ -30,8 +30,6 @@ if __name__ == '__main__':
 
         # open_mail()
         
-        sleep(0.2)
-        
         exit_to_main_menu()
         
         wait_for_end_loading_screen()
