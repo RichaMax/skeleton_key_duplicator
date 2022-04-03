@@ -30,7 +30,7 @@ def open_mail():
     sleep(0.2)
     press_key(Key.enter)
     for _ in range(3):
-        sleep(0.2)
+        sleep(0.3)
         press_key('c')
     sleep(0.5)
     press_key(Key.enter)
