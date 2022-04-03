@@ -3,12 +3,7 @@ from PIL import Image, ImageGrab
 from time import sleep
 import numpy as np
 
-
-def ticker(interval: float):
-    while True:
-        sleep(interval)
-        yield
-
+from utils import ticker
 
 def read_screen() -> Image:
     return ImageGrab.grab()
@@ -22,7 +17,3 @@ def wait_for_end_loading_screen():
         if np.mean(small_rec) > 3.0:
             sleep(0.2)
             break
-    
-
-def wait_for_main_menu():
-    screen = read_screen()

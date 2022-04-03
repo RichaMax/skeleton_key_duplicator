@@ -1,25 +1,20 @@
-from keys import *
-from screen import *
+from keys import exit_to_main_menu, continue_game, open_mail
+from screen import wait_for_end_loading_screen
 from time import sleep
 from pynput import keyboard
 
-ACTIVE = False
+from utils import ticker
 
-def on_press(key: Key):
-    if isinstance(key, keyboard._win32.KeyCode):
-        if key.char == 'm':
-            print('boooop')
+ACTIVE = False
         
-def on_release(key: Key):
+def on_release(key: keyboard.Key):
     global ACTIVE
     if isinstance(key, keyboard._win32.KeyCode):
-        if key.char == 'm':
-            print('beeeep')
+        if key.char.lower() == 'm':
             ACTIVE = not ACTIVE
 
 if __name__ == '__main__':
     listener = keyboard.Listener(
-        on_press=on_press,
         on_release=on_release,
     )
     
