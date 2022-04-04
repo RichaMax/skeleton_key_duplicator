@@ -15,6 +15,6 @@ def wait_for_end_loading_screen():
         small_rec = image_array[-30:, -30:]
         if np.mean(small_rec) > 3.0:
             sleep(0.2)
-            if i == 0:
-                raise Exception
+            # if i == 0:
+            #     raise Exception
             break
