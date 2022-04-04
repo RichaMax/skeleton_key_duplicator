@@ -1,2 +1,5 @@
 .pyenv
 **.pyc
+build
+dist
+**.spec
