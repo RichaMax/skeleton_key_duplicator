@@ -4,7 +4,7 @@ from time import sleep
 
 # Wait times
 ESCAPE_MENU_NAVIGATION = 0.1
-SOCIAL_MENU_NAVIGATION = 0.2
+SOCIAL_MENU_NAVIGATION = 0.1
 EXIT_POPUP_NAVIGATION = 0.2
 
 ESCAPE_MENU_OPEN = 0.2
@@ -34,5 +34,6 @@ def open_mail():
     press_key(Key.down, pause=ESCAPE_MENU_NAVIGATION)
     press_key(Key.enter, pause=SOCIAL_MENU_OPEN)
     press_key('c', times=3, pause=SOCIAL_MENU_NAVIGATION)
-    press_key(Key.enter)
-    sleep(0.2)
+    sleep(0.4)
+    press_key('e')
+    sleep(0.3)
