@@ -1,6 +1,6 @@
 import logging
 from enum import Enum
-from time import sleep
+from time import sleep, time
 from pynput import keyboard
 
 from keys import exit_to_main_menu, continue_game, open_mail
@@ -26,14 +26,17 @@ if __name__ == '__main__':
 
     print('Bot ready. Press M to activate/deactivate')
     
+    number_of_keys = 30
+
     duplications = 0
 
     while not ACTIVE:
         sleep(0.1)
 
     print('Bot started')
+    start_time = time()
 
-    while ACTIVE:
+    while ACTIVE and duplications < number_of_keys:
             
         continue_game()
         
@@ -48,5 +51,7 @@ if __name__ == '__main__':
         duplications += 1
 
     print('Bot finished')
+    end_time = time()
 
     print(f'{duplications} duplications')
+    print(f'Total time: {(end_time - start_time):.2f}s - mean: {((end_time - start_time)/duplications):.2f}s')
