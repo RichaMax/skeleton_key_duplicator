@@ -5,6 +5,7 @@ from pynput import keyboard
 
 from keys import exit_to_main_menu, continue_game, open_mail
 from screen import wait_for_end_loading_screen
+from config import load_settings
 
 ACTIVE = False
 
@@ -23,6 +24,8 @@ if __name__ == '__main__':
     )
     
     listener.start()
+
+    print(load_settings())
 
     print('Bot ready. Press M to activate/deactivate')
     

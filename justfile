@@ -10,4 +10,4 @@ start:
     {{root}}\.pyenv\Scripts\activate; python {{root}}\src\main.py
 
 build:
-    cd {{root}}\src; {{root}}\.pyenv\Scripts\activate; pyinstaller -c --onefile main.py
+    cd {{root}}\src; {{root}}\.pyenv\Scripts\activate; pyinstaller -c --onefile --distpath {{root}}\target\dist --workpath {{root}}\target\build main.py

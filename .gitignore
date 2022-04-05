@@ -1,5 +1,4 @@
 .pyenv
 **.pyc
-build
-dist
 **.spec
+target
