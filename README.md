@@ -10,7 +10,8 @@ You need to have entered at least on shift code to obtain a skeleton key **(DO N
 
 # Usage
 
-:warning: **Please read the instruction carefully before launching the script** :warning:
+:warning: **Please read the instruction carefully before launching the script!** :warning:
+
 First you need to have the bot on your computer, for that we offer two solutions, either using the **source code** or the compiled **executable**. 
 
 Steps : 
