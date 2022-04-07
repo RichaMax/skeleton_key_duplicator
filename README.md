@@ -40,6 +40,10 @@ First you need to have the bot on your computer, for that we offer two solutions
 
 The default parameters are the following:
    ```json
+   {
+    "nbr_keys": 10,
+    "multiplicator": 1.0
+   }
    ```
 
 ## Using executable
