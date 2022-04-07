@@ -25,9 +25,9 @@ First you need to have the bot on your computer, for that we offer two solutions
     ```python
     $>python main.py settings.json
     ``` 
+  
   7.2 Executable solution:  
-     Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)
-<!--   7.2. test -->
+     Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)  
  8. Go back to the game and press `m`
  9. Enjoy!
 
