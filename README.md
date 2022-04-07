@@ -36,7 +36,9 @@ First you need to have the bot on your computer, for that we offer two solutions
     ```python
     $> python -m pip install -r requirements.txt
     ```
-3. The `settings.json` file contains the arguments to launch the bot the default parameters are the following:
+3. The `settings.json` file contains the arguments necessary to to launch the bot. Feel free to modify the values to fit your needs.
+
+The default parameters are the following:
    ```json
    ```
 
