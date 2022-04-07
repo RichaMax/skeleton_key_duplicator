@@ -37,10 +37,10 @@ Steps :
 
 ## Using executable
 
-Just download the executable available here., and follow the steps above.
+Just download the executable available here, and follow the steps above.
 
 
-# How it woarks
+# How it works
 
 The script automatize the actions necessary to retrieve the skelton(s) key(s) in the email tab of the social panel.
 
