@@ -22,9 +22,9 @@ First you need to have the bot on your computer, for that we offer two solutions
  6. Check that you are indeed disconnected from the internet (a wifi simbol with a red X should be present below you caracter name if it is the case)
  7. Start the bot  
   7.1. Script solution:  
-     ```python
-     $>python main.py settings.json
-     ```  
+    ```python
+    $>python main.py settings.json
+    ``` 
   7.2 Executable solution:  
      Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)
 <!--   7.2. test -->
