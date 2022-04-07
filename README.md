@@ -21,21 +21,14 @@ First you need to have the bot on your computer, for that we offer two solutions
  5. Go back to the game and exit to main menu
  6. Check that you are indeed disconnected from the internet (a wifi simbol with a red X should be present below you caracter name if it is the case)
  7. Start the bot  
-  7.1. Script solution:
+  7.1. Script solution:  
     ```python
     $>python main.py settings.json
     ```  
-  7.2 Executable solution:  
-     Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)    
+    7.2 Executable solution:  
+      Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)  
  8. Go back to the game and press `m`
  9. Enjoy!
-
-<!--   7.1. Script solution:
-     ```python
-     $>python main.py settings.json
-     ```
-  7.2. Executable solution:
-     Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)  -->
 
 ## From source 
 1. Clone the repository on your computer
@@ -43,15 +36,13 @@ First you need to have the bot on your computer, for that we offer two solutions
     ```python
     $> python -m pip install -r requirements.txt
     ```
-3. Launch the python script `main.py` with
-    ```python
-    $>python main.py settings.json
-    ```
+3. The `settings.json` file contains the arguments to launch the bot the default parameters are the following:
+   ```json
+   ```
 
 ## Using executable
 
 Just download the executable available here, and follow the steps above.
-
 
 # How it works
 
