@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from config import load_settings
+import sys
 
 
 class BotGui(tk.Frame):
@@ -26,12 +27,29 @@ class BotGui(tk.Frame):
         ttk.Label(self.frame, text="number of keys:").grid(column=0, row=2)
         ttk.Entry(self.frame, textvariable=self.nb_key).grid(column=1, row=2)
 
-        ttk.Button(self.frame, text="Launch", command=self.print_test).grid(column=2, row=3)
-        ttk.Button(self.frame, text="Quit", command=root.destroy).grid(column=0, row=3)
+        terminal_gui = tk.Text(self.frame, wrap="word")
+        terminal_gui.grid(column=1, row=3)
+        terminal_gui.tag_configure("stdout", foreground="#000000")
 
+        sys.stdout = TextRedirector(terminal_gui, "stdout")
+        sys.stderr = TextRedirector(terminal_gui, "stderr")
+
+        ttk.Button(self.frame, text="Quit", command=root.destroy).grid(column=0, row=4)
+        ttk.Button(self.frame, text="Launch", command=self.print_test).grid(column=2, row=4)
+        
     def print_test(self):
         print(self.nb_key.get())
 
+
+class TextRedirector(object):
+    def __init__(self, widget, tag="stdout"):
+        self.widget = widget
+        self.tag = tag
+
+    def write(self, str):
+        self.widget.configure(state="normal")
+        self.widget.insert("end", str, (self.tag,))
+        self.widget.configure(state="disabled")
 
 
 if __name__ == '__main__':
