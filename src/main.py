@@ -18,18 +18,16 @@ def switch_active(key: keyboard.Key):
         if key.char.lower() == 'm':
             ACTIVE = not ACTIVE
 
-if __name__ == '__main__':
+def launch_bot(number_of_keys):
     listener = keyboard.Listener(
         on_release=switch_active,
     )
     
     listener.start()
 
-    print(load_settings())
+    # print(load_settings())
 
     print('Bot ready. Press M to activate/deactivate')
-    
-    number_of_keys = 30
 
     duplications = 0
 
@@ -58,3 +56,6 @@ if __name__ == '__main__':
 
     print(f'{duplications} duplications')
     print(f'Total time: {(end_time - start_time):.2f}s - mean: {((end_time - start_time)/duplications):.2f}s')
+
+if __name__ == '__main__':
+    launch_bot()

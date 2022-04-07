@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from config import load_settings
 import sys
+from main import launch_bot
+import threading
+import time
 
 
 class BotGui(tk.Frame):
@@ -31,14 +34,26 @@ class BotGui(tk.Frame):
         terminal_gui.grid(column=1, row=3)
         terminal_gui.tag_configure("stdout", foreground="#000000")
 
+        # sys.stdout.write=self.decorator(sys.stdout.write, terminal_gui)
         sys.stdout = TextRedirector(terminal_gui, "stdout")
         sys.stderr = TextRedirector(terminal_gui, "stderr")
 
         ttk.Button(self.frame, text="Quit", command=root.destroy).grid(column=0, row=4)
-        ttk.Button(self.frame, text="Launch", command=self.print_test).grid(column=2, row=4)
+        ttk.Button(self.frame, text="Launch", command=self.gui_bot_launch).grid(column=2, row=4)
         
-    def print_test(self):
-        print(self.nb_key.get())
+    def decorator(self, func, textbox):
+        def inner(inputStr):
+            try:
+                textbox.text_area.update_idletasks()
+                textbox.insert(tk.INSERT, inputStr)
+                return func(inputStr)
+            except:
+                return func(inputStr)
+        return inner
+    
+    def gui_bot_launch(self):
+        t1 = threading.Thread(target=launch_bot, args=(self.nb_key.get(),))
+        t1.start()
 
 
 class TextRedirector(object):
