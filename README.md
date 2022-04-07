@@ -21,7 +21,7 @@ First you need to have the bot on your computer, for that we offer two solutions
  5. Go back to the game and exit to main menu
  6. Check that you are indeed disconnected from the internet (a wifi simbol with a red X should be present below you caracter name if it is the case)
  7. Start the bot  
-  7.1. Script solution:  
+  7.1. Script solution:
     ```python
     $>python main.py settings.json
     ```  
