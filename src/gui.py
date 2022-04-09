@@ -5,14 +5,23 @@ import sys
 from main import launch_bot
 import threading
 import time
+import os
+import json
 
 
 class BotGui(tk.Frame):
     def __init__(self, main_root):
         super().__init__(main_root)
+        if not os.path.exists('settings.json'):
+            s = {"nbr_keys": 10,
+                "multiplicator": 1.0}
+            with open("settings.json", "w") as f:
+                json.dump(s, f, indent = 4)
+
         settings = load_settings()
-        main_root.title('Swaggy bot')
-        self.frame = ttk.Frame(main_root, padding=10)
+        self.root = main_root
+        self.root.title('Swaggy bot')
+        self.frame = ttk.Frame(self.root, padding=10)
         self.frame.grid()
 
         self.speed_value = tk.DoubleVar()
@@ -38,7 +47,7 @@ class BotGui(tk.Frame):
         sys.stdout = TextRedirector(terminal_gui, "stdout")
         sys.stderr = TextRedirector(terminal_gui, "stderr")
 
-        ttk.Button(self.frame, text="Quit", command=root.destroy).grid(column=0, row=4)
+        ttk.Button(self.frame, text="Quit", command=self.exit_gui).grid(column=0, row=4)
         ttk.Button(self.frame, text="Launch", command=self.gui_bot_launch).grid(column=2, row=4)
         
     def decorator(self, func, textbox):
@@ -54,6 +63,13 @@ class BotGui(tk.Frame):
     def gui_bot_launch(self):
         t1 = threading.Thread(target=launch_bot, args=(self.nb_key.get(),))
         t1.start()
+    
+    def exit_gui(self):
+        s = {"nbr_keys": self.nb_key.get(),
+            "multiplicator": self.speed_value.get()}
+        with open("settings.json", "w") as f:
+            json.dump(s, f, indent = 4)
+        self.root.destroy()
 
 
 class TextRedirector(object):
