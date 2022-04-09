@@ -58,4 +58,5 @@ def launch_bot(number_of_keys):
     print(f'Total time: {(end_time - start_time):.2f}s - mean: {((end_time - start_time)/duplications):.2f}s')
 
 if __name__ == '__main__':
-    launch_bot()
+    settings = load_settings()
+    launch_bot(settings.nbr_keys)
