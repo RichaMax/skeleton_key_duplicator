@@ -47,7 +47,7 @@ Just download the executable available here.
  7. Start the bot  
   7.1. Script solution:  
     ```python
-    $>python main.py
+    $>python src/main.py
     ```  
     7.2 Executable solution:  
         Double click on the executable and press 'Launch' in the GUI (you can modify the default parameters as you pleased)  
