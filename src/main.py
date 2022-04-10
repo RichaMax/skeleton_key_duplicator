@@ -11,26 +11,26 @@ ACTIVE = False
 
 class BotStoppedError(Exception):
     pass
-        
+
+
 def switch_active(key: keyboard.Key):
     global ACTIVE
     if isinstance(key, keyboard._win32.KeyCode):
         if key.char.lower() == 'm':
             ACTIVE = not ACTIVE
 
+
 def launch_bot(number_of_keys):
     listener = keyboard.Listener(
         on_release=switch_active,
     )
-    
+    global ACTIVE
     listener.start()
-
-    # print(load_settings())
 
     print('Bot ready. Press M to activate/deactivate')
 
     duplications = 0
-
+    
     while not ACTIVE:
         sleep(0.1)
 
@@ -38,7 +38,7 @@ def launch_bot(number_of_keys):
     start_time = time()
 
     while ACTIVE and duplications < number_of_keys:
-            
+
         continue_game()
         
         wait_for_end_loading_screen()
@@ -56,6 +56,8 @@ def launch_bot(number_of_keys):
 
     print(f'{duplications} duplications')
     print(f'Total time: {(end_time - start_time):.2f}s - mean: {((end_time - start_time)/duplications):.2f}s')
+    listener.stop()
+    ACTIVE = False
 
 if __name__ == '__main__':
     settings = load_settings()

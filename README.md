@@ -54,7 +54,7 @@ Just download the executable available here.
  8. Go back to the game and press `m`
  9. Enjoy!
 
-You can pause the bot at any time by pressing `m` again, it will finish the current loop and stay idle. If you repress `m` it will resume his execution. 
+You can stop the bot at any time by pressing `m` again, it will finish the current loop and stop.
 
 # How it works
 
